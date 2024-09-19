@@ -34,7 +34,7 @@ grep -o 'C' 'NC_001666.2?report=fasta' | wc -l
 #How many times does T occur
 grep -o 'T' 'NC_001666.2?report=fasta' | wc -l
 #Calculate the %GC content of your gene
-# Assign the nucleotide counts correctly
+# Assign the nucleotide counts 
 g_count=83
 c_count=283
 t_count=124
