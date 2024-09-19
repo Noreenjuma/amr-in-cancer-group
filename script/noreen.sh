@@ -66,40 +66,6 @@ git branch
 git push origin main
 
 
-# Commands to count nucleotides
-grep -o  'A' 'NC_001666.2?report=fasta' | wc -l
-grep -o  'C' 'NC_001666.2?report=fasta' | wc -l
-grep -o  'G' 'NC_001666.2?report=fasta' | wc -l
-grep -o  'T' 'NC_001666.2?report=fasta' | wc -l
-# Assign the nucleotide counts correctly
-g_count=83
-c_count=283
-t_count=124
-a_count=113
-# Calculate the total nucleotide count
-total_count=$((a_count + t_count + g_count + c_count))
 
-# Print the total count
-echo "Total nucleotide count: $total_count"
-# Calculate %GC content
-gc_content=$(echo "scale=2; (($g_count + $c_count) / $total_count) * 100" | bc)
-echo "GC content: $gc_content%"
-#Create a nucleotide (.fasta) file title your name
-echo ">nasambu_sequence" > nasambu.fasta
-#echo” the following into the file using >>: the number of A, G, T and C in the file you created aecho "Number of A: $a_count" >> nasambu.fasta
-echo "Number of G: $g_count" >> nasambu.fasta
-echo "Number of T: $t_count" >> nasambu.fasta
-echo "Number of C: $c_count" >>nasambu.fasta 
-echo "Number of A: $a_count" >>nasambu.fasta
-git config --global user.email "noreenjuma18@gmail.com"                            
-git clone https://github.com/Noreenjuma/amr-in-cancer-group.git
-#Upload the file to your team’s github repo in a folder called /output
- cd amr-in-cancer-group
-cd noreen
-mv nasambu.fasta amr-in-cancer-group/output/ 
-cd amr-in-cancer-group
-git add output/nasambu.fasta
-git commit -m "Add nasambu.fasta to the output folder"
-git branch
-git push origin main
+
 
